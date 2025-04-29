@@ -1,45 +1,92 @@
-public class HIndex
+using System.Reflection;
+
+namespace LeetCode
 {
-    public int hIndex(int[] citations)
+    public class HIndex
     {
-        int hindex = 0;
-        int h = 0;
-        int count = 0;
-        int hmax = 0;
-        for(int i = 0; i < citations.Length; i++)
-        {
-            hmax = Math.Max(hmax, citations[i]);
-        }
-        h = hmax;
-        for(int i = 0; i < hmax; i++)
-        {
-            
-            for(int j = 0; j < citations.Length; j++)
-            {
+        // public int hIndex(int[] citations)
+        // {
+        //     int hindex = 0;
+        //     int h = 0;
+        //     int count = 0;
+        //     int hmax = 0;
+        //     for(int i = 0; i < citations.Length; i++)
+        //     {
+        //         hmax = Math.Max(hmax, citations[i]);
+        //     }
+        //     h = hmax;
+        //     for(int i = 0; i < hmax; i++)
+        //     {
+                
+        //         for(int j = 0; j < citations.Length; j++)
+        //         {
 
-                if(citations[j] >= h)
-                {
-                    count++;
-                }
-                if(count >= h)
-                {
-                    int Hindex = h;
-                    return  Hindex;
-                }
+        //             if(citations[j] >= h)
+        //             {
+        //                 count++;
+        //             }
+        //             if(count >= h)
+        //             {
+        //                 int Hindex = h;
+        //                 return  Hindex;
+        //             }
+        //         }
+        //         hindex = count;
+        //         h--;
+        //         count = 0;
+        //     }
+        //     return  hindex;
+        // }
+
+        // public int hIndex(int[] citations)
+        // {
+        //     Array.Sort(citations);
+        //     int h = 0;
+        //     int H = 0;
+        //     int hindex;
+
+        //     if(citations[0] > citations.Length)
+        //     {
+        //         hindex = citations.Length;
+        //     }
+        //     else{
+        //         for(int i = 0; i < citations.Length; i++)
+        //         {
+        //             if(citations[i] <= citations.Length - i)
+        //             {
+        //                 h = citations[i];
+        //             }
+        //             else
+        //             {
+        //                 H = citations.Length - i;
+        //                 break;
+        //             }
+        //         }
+        //         hindex = Math.Max(H, h);
+        //     }
+        //     return hindex;
+        // }
+
+        public int hIndex(int[] citations)
+        {
+            Array.Sort(citations);
+            int h = 0, i = citations.Length - 1; 
+            while (i >= 0 && citations[i] > h) {
+                h++; 
+                i--;
             }
-            hindex = count;
-            h--;
-            count = 0;
+            return h;
         }
-        return  hindex;
     }
-
-    public static void Main(string[] args)
+    public static class Program
     {
-        int[] citations = { 11, 15}; // 输入数组
-        HIndex solution = new HIndex();
-        int h_Index = solution.hIndex(citations);
-        Console.WriteLine("最大h指数为: " + h_Index); 
+        public static void Main(string[] args)
+        {
+            int[] citations = {4,4,0,0};
+            HIndex hIndex = new HIndex();
+            int h_Index = hIndex.hIndex(citations);
+            Console.WriteLine("最大h指数："+ h_Index);
+        }
     }
 }
  
