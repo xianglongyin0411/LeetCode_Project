@@ -24,11 +24,11 @@ public class MaxProfit2
 
         return maxProfit;
     }
-    public static void Main(string[] args)
-    {
-        int[] price = { 1, 2, 3, 4, 5}; // 输入数组
-        MaxProfit2 solution = new MaxProfit2();
-        int result = solution.maxProfit2(price); // 调用 maxProfit2 方法
-        Console.WriteLine("最大利润为: " + result); // 输出结果
-    }
+    // public static void Main(string[] args)
+    // {
+    //     int[] price = { 1, 2, 3, 4, 5}; // 输入数组
+    //     MaxProfit2 solution = new MaxProfit2();
+    //     int result = solution.maxProfit2(price); // 调用 maxProfit2 方法
+    //     Console.WriteLine("最大利润为: " + result); // 输出结果
+    // }
 }
