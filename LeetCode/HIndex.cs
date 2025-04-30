@@ -78,15 +78,15 @@ namespace LeetCode
             return h;
         }
     }
-    public static class Program
-    {
-        public static void Main(string[] args)
-        {
-            int[] citations = {4,4,0,0};
-            HIndex hIndex = new HIndex();
-            int h_Index = hIndex.hIndex(citations);
-            Console.WriteLine("最大h指数："+ h_Index);
-        }
-    }
+    // public static class Program
+    // {
+    //     public static void Main(string[] args)
+    //     {
+    //         int[] citations = {4,4,0,0};
+    //         HIndex hIndex = new HIndex();
+    //         int h_Index = hIndex.hIndex(citations);
+    //         Console.WriteLine("最大h指数："+ h_Index);
+    //     }
+    // }
 }
  
