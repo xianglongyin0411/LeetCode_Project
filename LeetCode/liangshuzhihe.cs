@@ -17,15 +17,15 @@ namespace LeetCode
             return [-1, -1];
         }
     }
-    public static class Program
-    {
-        public static void Main(String[] arge)
-        {
-            int[] nums = {2,7,11,15};
-            int target = 9;
-            liangShuhe liangshuhe = new liangShuhe();
-            int[] zuobiao = liangshuhe.TwoSum(nums, target);
-            Console.WriteLine("两数坐标为："+ string.Join(",",zuobiao));
-        }
-    }
+    // public static class Program
+    // {
+    //     public static void Main(String[] arge)
+    //     {
+    //         int[] nums = {2,7,11,15};
+    //         int target = 9;
+    //         liangShuhe liangshuhe = new liangShuhe();
+    //         int[] zuobiao = liangshuhe.TwoSum(nums, target);
+    //         Console.WriteLine("两数坐标为："+ string.Join(",",zuobiao));
+    //     }
+    // }
 }

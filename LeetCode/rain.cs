@@ -9,7 +9,6 @@ namespace LeetCode
         {
             int total = 0;
             int x = 0;
-            int y = 0;
             int j;
             for(int i = 0; i < height.Length - 1; i++)
             {
